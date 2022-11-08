@@ -9,9 +9,10 @@ import (
 	"github.com/g0dm0d/lineup/entity"
 )
 
-func GetData(npt string) (data entity.RetData) {
+func GetData(npt string, filterid int) (data entity.RetData) {
 	link := "https://sg-public-api.hoyoverse.com/event/simulatoros/lineup/index?"
-	params := fmt.Sprintf("next_page_token=%s&order=CreatedTime&tag_id=2", url.QueryEscape(npt))
+	params := fmt.Sprintf("next_page_token=%s&order=CreatedTime&tag_id=%d",
+		url.QueryEscape(npt), filterid)
 	method := "GET"
 
 	client := &http.Client{}
