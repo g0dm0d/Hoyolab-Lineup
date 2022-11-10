@@ -5,7 +5,7 @@ import (
 )
 
 func SearchID(data entity.Data, search string) bool {
-	for i := 0; i < len(data.List); i++ {
+	for i := range data.List {
 		if data.List[i].ID == search {
 			return true
 		}

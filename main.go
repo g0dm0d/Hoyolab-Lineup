@@ -20,7 +20,7 @@ func main() {
 	req := tools.GetData("", id)
 	var data []entity.RetData
 	for {
-		if tools.SearchID(req.Data, "6365b24c8436de1e619428d0") {
+		if tools.SearchID(req.Data, "") || req.Data.Npt == "" {
 			break
 		}
 		req = tools.GetData(req.Data.Npt, id)
